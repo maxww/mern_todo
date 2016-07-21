@@ -9,8 +9,6 @@ export default class App extends React.Component {
     constructor(props){
         super(props);
 
-        // const initFilter = this.props.initFilter;
-        console.log("initFilter", props)
         this.state = {todos:[]};
     }
 

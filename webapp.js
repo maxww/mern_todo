@@ -1,6 +1,8 @@
 import express from 'express';
 const app = express();
 
+export default app;
+
 import bodyParser from 'body-parser';
 import { MongoClient, ObjectId } from 'mongodb';
 
@@ -12,7 +14,7 @@ let db;
 
 app.get('/api/todos', function(req, res, next){
     db.collection('todos').find().toArray(function(err, docs){
-        res.json(docs);
+        res.status(200).json(docs);
     });
 });
 
