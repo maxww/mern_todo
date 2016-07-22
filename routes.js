@@ -17,7 +17,7 @@ router.param('id', function (req, res, next, id) {
 				res.status(404).end();
 			}
 		})
-		.then(null, next);
+		.catch(next);
 });
 
 router.get('/todos', function (req, res, next) {
@@ -25,7 +25,7 @@ router.get('/todos', function (req, res, next) {
 		.then(function (todos) {
 			res.status(200).json(todos);
 		})
-		.then(null, next)
+		.catch(next)
 });
 
 router.post('/todos', function (req, res, next) {

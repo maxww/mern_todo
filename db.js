@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import bluebird from 'bluebird';
+mongoose.Promise = bluebird;
 
 const db = mongoose.connect('mongodb://localhost:27017/testing-todos').connection;
 

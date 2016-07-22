@@ -5,7 +5,6 @@ import { expect } from 'chai';
 import mongoose from 'mongoose';
 import Todo from './model';
 
-
 describe('Todo routes', function () {
 
 	describe('`/api/todos` URI', function () {
@@ -18,7 +17,8 @@ describe('Todo routes', function () {
 
 	describe('add todo', function () {
 		before(function (done) {
-			Todo.find({}).exec()
+			Todo.find({})
+				.exec()
 				.then(function (todos) {
 					todos.forEach(todo => todo.remove());
 					done();
@@ -64,16 +64,18 @@ describe('Todo routes', function () {
 					title: 'put test'
 				})
 				.end(function () {
-					Todo.findById(todo._id).exec()
+					Todo.findById(todo._id)
+						.exec()
 						.then(function (todo) {
-							expect(todo).to.equal('put test');
+							expect(todo)
+								.to.equal('put test');
 						});
 					done();
 				})
 		})
 	})
 
-	describe('DELETE /api/todos/:id', function(){
+	describe('DELETE /api/todos/:id', function () {
 		let todo;
 
 		beforeEach(function () {
@@ -88,16 +90,17 @@ describe('Todo routes', function () {
 				})
 		})
 
-		it ('delete todo', function(done){
+		it('delete todo', function (done) {
 			app.delete('/api/todos/' + todo._id)
-			.end(function(){
-				expect(204)
-				Todo.find({})
-				.then(function(todos){
-					expect(todos).to.have.lengthOf(0);
-					done();
+				.end(function () {
+					expect(204)
+					Todo.find({})
+						.then(function (todos) {
+							expect(todos)
+								.to.have.lengthOf(0);
+							done();
+						})
 				})
-			})
 		})
 	})
 })
