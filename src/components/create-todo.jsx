@@ -20,7 +20,7 @@ export default class CreateTodo extends React.Component {
 
 	render() {
 		return (
-			<form onSubmit={this.handleCreat.bind(this)}>
+			<form onSubmit={this.handleCreate.bind(this)}>
 				<input type="text" placeholder="what to do?" ref="createInput"/>
 				<button>Add</button>
 				{this.renderError()}
@@ -28,7 +28,7 @@ export default class CreateTodo extends React.Component {
 		)
 	}
 
-	handleCreat(event) {
+	handleCreate(event) {
 		event.preventDefault();
 		console.log("create", this.props)
 
