@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const db = mongoose.connect('mongodb://localhost:27017/testing-todo').connection;
+const db = mongoose.connect('mongodb://localhost:27017/testing-todos').connection;
 
 
 db.on('open', function () {
