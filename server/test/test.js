@@ -1,9 +1,9 @@
 import { agent } from 'supertest';
-import routes from './webapp';
+import routes from '../app';
 const app = agent(routes);
 import { expect } from 'chai';
 import mongoose from 'mongoose';
-import Todo from './model';
+import Todo from '../db/model';
 
 describe('Todo routes', function () {
 

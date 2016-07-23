@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-import db from './db';
+import db from './index';
 
 let Todo = new mongoose.Schema({
 	complete: {

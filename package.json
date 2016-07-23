@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register test.js",
-    "start": "nodemon start.js"
+    "start": "nodemon ./server/start.js"
   },
   "dependencies": {
     "axios": "^0.13.1",

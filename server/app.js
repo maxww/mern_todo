@@ -14,6 +14,6 @@ app.use('/api', router)
 
 import db from './db';
 
-app.listen(3000, function(){
-    console.log("now listening port 3000")
+app.listen(3000, function () {
+	console.log("now listening port 3000")
 })

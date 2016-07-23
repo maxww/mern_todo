@@ -1,10 +1,9 @@
-import {
-	Router
-} from 'express';
+import { Router } from 'express';
 const router = Router();
 export default router;
+
 import mongoose from 'mongoose';
-import Todo from './model';
+import Todo from '../db/model';
 import _ from 'lodash';
 
 router.param('id', function (req, res, next, id) {
